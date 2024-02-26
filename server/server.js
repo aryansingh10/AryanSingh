@@ -6,8 +6,11 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 const Contact = require('../models/contactModel'); 
+const dotenv=require('dotenv');
+dotenv.config();
+console.log("MongoDB URL:", process.env.MONGO_URL);
 
-mongoose.connect('mongodb://localhost:27017/User-Detail', {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
