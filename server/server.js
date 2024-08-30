@@ -55,7 +55,8 @@ app.post('/submit-contact', async (req, res) => {
     try {
         // Save the form data to MongoDB
         // Assuming you have a Mongoose model named 'Contact'
-        const Contact = mongoose.model('Contact');
+
+        
         const newContact = new Contact({
             name: req.body.name,
             email: req.body.email,
